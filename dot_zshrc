@@ -1,0 +1,112 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.zsh/powerlevel10k/.p10k.zsh ]] || source ~/.zsh/powerlevel10k/.p10k.zsh
+
+# Use the remainder of this file only with interactive shells
+[ -z "$PS1" ] && return
+
+# To customize search fzf
+[ -f ~/.zsh/.fzf/.fzf.zsh ] && source ~/.zsh/.fzf/.fzf.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Enable prompt substitution and colors
+setopt prompt_subst
+autoload colors
+colors
+
+
+## Alias section
+alias cp="cp -i" 
+alias sshk="kitty +kitten ssh"
+alias icat="kitty +kitten icat"
+alias cdb='cd ..'
+alias ll='lsd -lAv --group-dirs=first'
+alias ls='lsd -v --group-dirs=first'
+alias l='lsd -av --group-dirs=first'
+alias cat='bat'
+alias gitlog='git log --oneline --reverse'
+alias gitlogform='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+eval "$(thefuck --alias)"
+# You can use whatever you want as an alias, like for Mondays:
+eval "$(thefuck --alias FUCK)"
+alias fzf="fzf --height 40% --layout reverse --border --style default --preview 'fzf-preview.sh {}' --bind 'focus:transform-header:file --brief {}'"
+# This funtion need install "rsync -- sudo pacman -S rsync"
+#function cpcustom() {
+#cp "$1" "$2" | pv -lrptaI -s $(du -sb "$1" | awk '{print $1}') 
+#}
+#
+#alias cp=cpcustom
+#function mvcustom() {
+#cp "$1" "$2" | pv -lep -g -s $(du -sb "$1" | awk '{print $1}') > /dev/null
+#}
+
+#alias mv=mvcustom
+#function rmcustom() {
+#cp "$1" "$2" | pv -lep -g -s $(du -sb "$1" | awk '{print $1}') > /dev/null
+#}
+
+#alias rm=rmcustom
+
+source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
+source ~/.zsh/zsh-archlinux-shortsaliases/archalinux.shortaliases.zsh
+source ~/.zsh/zsh-alias-finder/zsh-alias-finder.plugin.zsh
+source ~/.zsh/aliases-cheatsheet-pluguin/aliases.plugin.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-sudo/zsh-sudo.zsh
+
+#history
+export HISTFILE=~/.zsh_history
+export HISTSIZE=500
+export SAVEHIST=50000
+export HISTIGNORE="&:[bf]g:exit:history:top:clear:cd:cd ..:cd.."
+setopt INC_APPEND_HISTORY HIST_IGNORE_ALL_DUPS HIST_REDUCE_BLANKS HIST_SAVE_NO_DUPS HIST_IGNORE_SPACE NO_BANG_HIST
+
+# Enable prompt substitution and colors
+setopt prompt_subst
+autoload colors
+colors
+# zsh completion / misc opts
+autoload -U compinit
+compinit -i
+zstyle ':completion:*' hosts off            # don't autocomplete host names
+unsetopt menu_complete                      # don't insert the first match upon ambiguous completion
+zstyle ':completion:*:*:*:*:*' menu select  # use an interactive menu (moveable highlight bar)
+unsetopt flowcontrol                        # disable flow control (starting/starting flow to the terminal)
+setopt complete_in_word
+setopt always_to_end
+
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+bindkey "^[[3" delete-char
+bindkey "^[[1;3C" forward-word 
+bindkey "^[[1;3D" backward-word
+
+# Color man pages
+export LESS_TERMCAP_mb=$'\E[01;32m'
+export LESS_TERMCAP_md=$'\E[01;32m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;47;34m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;36m'
+export LESS=-R
+
+export PATH=$PATH:/usr/bin
+
+if [ -z "$SSH_AUTH_SOCK" ] && [ "$(id -u)" -ne 0 ]; then
+  eval "$(ssh-agent -s)"
+  ssh-add ~/.ssh/id_rsa
+fi
+
+export PATH=$PATH:$HOME/repos/platform-tools/
+export PATH="$HOME/.local/bin:$PATH"
+export XDG_SEAT_PATH=/org/freedesktop/DisplayManager/SeatX
+export PATH="$HOME/repos/.npm-global/bin:$PATH"
+

@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Oneko
+Comment=Un pequeño gato que corre por la pantalla
+Exec=oneko -mouse
+Icon=/usr/share/pixmaps/oneko.png
+StartupNotify=false
+Terminal=false
+Categories=Utility;Fun;
+Hidden=false
+X-GNOME-Autostart-enabled=true
+

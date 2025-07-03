@@ -1,0 +1,13 @@
+0000000000000000000000000000000000000000 4c15874f1a7ab38570ead6f2ecfbffe4be9beb90 Gerardo Zúñiga <TheRambien@hotmail.com> 1745288915 -0500	commit (initial): Adds IP address information GNOME extension
+4c15874f1a7ab38570ead6f2ecfbffe4be9beb90 209f0498a3d6c22668d590c770784548cb6dfc91 Gerardo Zúñiga <TheRambien@hotmail.com> 1745289037 -0500	commit: Updates extension description
+209f0498a3d6c22668d590c770784548cb6dfc91 e2e68c7533be677967ae60f8576fd53fba5bae03 Gerardo Zúñiga <TheRambien@hotmail.com> 1745422102 -0500	commit: Adds network utility functions
+e2e68c7533be677967ae60f8576fd53fba5bae03 6f775ce691bbf202578f4e823a19e0213af56415 Gerardo Zúñiga <TheRambien@hotmail.com> 1747472181 -0400	commit: no important changes only remove autor
+6f775ce691bbf202578f4e823a19e0213af56415 eca3f551debeb599a60bd18cc70229f89745ec1a Gerardo Zúñiga <TheRambien@hotmail.com> 1747472454 -0400	commit: testing future features
+eca3f551debeb599a60bd18cc70229f89745ec1a 440e425f02b620ea7237d1c8caec3e2d721a0f84 Gerardo Zúñiga <TheRambien@hotmail.com> 1747472749 -0400	commit: enchance ip info in json output
+440e425f02b620ea7237d1c8caec3e2d721a0f84 a2e3c05507113de3b2472fdb111466448b051d61 Gerardo Zúñiga <TheRambien@hotmail.com> 1747472808 -0400	commit: added keys for schemas prefs
+a2e3c05507113de3b2472fdb111466448b051d61 a2e3c05507113de3b2472fdb111466448b051d61 Gerardo Zúñiga <TheRambien@hotmail.com> 1748778066 -0600	Branch: renamed refs/heads/main to refs/heads/master
+a2e3c05507113de3b2472fdb111466448b051d61 78e57e2e042f7c746a444aec01e9ebaf038e1f20 Gerardo Zúñiga <TheRambien@hotmail.com> 1748778468 -0600	commit: upload a .gitignore
+78e57e2e042f7c746a444aec01e9ebaf038e1f20 40dbab406b97e0722698977d0455a55473550cda Gerardo Zúñiga <TheRambien@hotmail.com> 1748778493 -0600	commit: upload a readme
+40dbab406b97e0722698977d0455a55473550cda 415e9fd11724d638ca5900e98b49f421f115d6e4 Gerardo Zúñiga <TheRambien@hotmail.com> 1748782879 -0600	commit: update readme
+415e9fd11724d638ca5900e98b49f421f115d6e4 d6301a1b9c0aa4723570f7932fdc6ec82c115341 Gerardo Zúñiga <TheRambien@hotmail.com> 1748783201 -0600	commit (merge): Merge branch 'master' of github.com:0gerardo0/IP-Info-Bar
+d6301a1b9c0aa4723570f7932fdc6ec82c115341 6e4af7152455b51bf1e63add3eb5924d0c52b6b6 Gerardo Zúñiga <TheRambien@hotmail.com> 1748784267 -0600	commit: update readme

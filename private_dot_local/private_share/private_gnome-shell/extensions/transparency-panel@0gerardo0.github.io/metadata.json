@@ -1,0 +1,11 @@
+{
+  "uuid": "transparency-panel@0gerardo0.github.io",
+  "name": "Transparency Panel",
+  "description": "Aplica transparencia y estilos al top bar y popup menus.",
+  "version": 1.5,
+  "shell-version": ["45", "46","47", "48"],
+  "url": "https://github.com/tuusuario/my-blur-extension",
+  "settings-schema": "org.gnome.shell.extensions.transparency-panel",
+  "preferences": "prefs.js"
+}
+

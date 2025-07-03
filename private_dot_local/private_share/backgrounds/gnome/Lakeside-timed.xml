@@ -1,0 +1,165 @@
+<background>
+	<starttime>
+		<year>2020</year>
+		<month>1</month>
+		<day>23</day>
+		<hour>22</hour>
+		<minute>0</minute>
+		<second>0</second>
+	</starttime>
+
+	<static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-15.png</file>
+		<duration>588.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>5.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-15.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-1.png</to>
+  </transition>
+
+	<static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-1.png</file>
+		<duration>588.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>5.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-1.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-2.png</to>
+	</transition>
+
+  <static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-2.png</file>
+		<duration>588.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>5.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-2.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-3.png</to>
+	</transition>
+
+  <static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-3.png</file>
+		<duration>588.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>5.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-3.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-4.png</to>
+	</transition>
+
+  <static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-4.png</file>
+		<duration>588.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>5.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-4.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-5.png</to>
+	</transition>
+
+  <static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-5.png</file>
+		<duration>588.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>5.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-5.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-6.png</to>
+	</transition>
+
+  <static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-6.png</file>
+		<duration>588.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>5.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-6.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-7.png</to>
+	</transition>
+
+  <static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-7.png</file>
+		<duration>588.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>5.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-7.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-8.png</to>
+	</transition>
+
+
+	<static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-8.png</file>
+		<duration>600.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>1.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-8.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-9.png</to>
+	</transition>
+
+	<static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-9.png</file>
+		<duration>900.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>1.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-9.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-10.png</to>
+	</transition>
+
+	<static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-10.png</file>
+		<duration>1380.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>1.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-10.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-11.png</to>
+	</transition>
+
+	<static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-11.png</file>
+		<duration>1080.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>1.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-11.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-12.png</to>
+	</transition>
+
+	<static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-12.png</file>
+		<duration>1920.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>1.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-13.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-14.png</to>
+	</transition>
+
+	<static>
+		<file>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-14.png</file>
+		<duration>840.0</duration>
+	</static>
+
+	<transition type="overlay">
+		<duration>1.0</duration>
+		<from>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-14.png</from>
+		<to>/home/gerardo0/.local/share/backgrounds/gnome/Lakeside-timed/Lakeside-15.png</to>
+	</transition>
+</background>

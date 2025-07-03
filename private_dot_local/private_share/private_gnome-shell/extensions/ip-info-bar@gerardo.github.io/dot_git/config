@@ -1,0 +1,16 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+[gui]
+	wmstate = normal
+	geometry = 1366x734+279+1080 197 234
+[remote "origin"]
+	url = git@github.com:0gerardo0/IP-Info-Bar.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[pull]
+	rebase = false
+[branch "master"]
+	remote = origin
+	merge = refs/heads/master

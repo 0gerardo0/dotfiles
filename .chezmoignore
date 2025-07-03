@@ -1,0 +1,15 @@
+# Excluir carpetas temporales o irrelevantes
+.config/.avalonia-build-tasks
+.config/.mono
+.config/Windsurf
+.config/QXmlEdit
+.config/session
+.config/retroarch
+.config/yt-dlg
+.config/unity3d
+
+# Configs internas o sensibles
+.config/qBittorrent
+.config/pulse
+.config/systemd
+
