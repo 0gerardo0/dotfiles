@@ -2,7 +2,7 @@
 
 Repositorio gestionado con [`chezmoi`](https://www.chezmoi.io/) para mantener y versionar mi entorno personal de desarrollo y escritorio en Arch Linux + GNOME.
 
-## 🧰 Tecnologías y herramientas
+## Tecnologías y herramientas
 
 - **Sistema**: Arch Linux  
 - **DE**: GNOME  
@@ -16,7 +16,7 @@ Repositorio gestionado con [`chezmoi`](https://www.chezmoi.io/) para mantener y 
 
 ---
 
-## 🏗️ Estructura del repositorio
+## Estructura del repositorio
 
 ```
 ~/.local/share/chezmoi/
@@ -38,7 +38,7 @@ Repositorio gestionado con [`chezmoi`](https://www.chezmoi.io/) para mantener y 
 
 ---
 
-## 🚀 Instalación (restaurar dotfiles)
+##  Instalación (restaurar dotfiles)
 
 > Requiere tener `chezmoi` instalado.
 
@@ -48,17 +48,17 @@ sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init gerardozuniga --apply
 
 ---
 
-## 📦 Restaurar paquetes del sistema
+## Restaurar paquetes del sistema
 
 > Asumiendo que ya se tiene un AUR Helper
 
-### 📦 Paquetes oficiales (`pacman`):
+### Paquetes oficiales (`pacman`):
 
 ```bash
 sudo pacman -S --needed - < ~/.pkglist
 ```
 
-### 📦 Paquetes AUR:
+### Paquetes AUR:
 
 ```bash
 yay -S --needed - < ~/.pkglist.aur
@@ -66,7 +66,7 @@ yay -S --needed - < ~/.pkglist.aur
 
 ---
 
-## 🎨 Apariencia y temas
+## Apariencia y temas
 
 Incluye:
 
@@ -76,7 +76,7 @@ Incluye:
 
 ---
 
-## 🧩 Extensiones GNOME
+## Extensiones GNOME
 
 La lista de extensiones puede instalarse manualmente o mediante backup. Consulta tus extensiones activas:
 
@@ -86,7 +86,7 @@ gsettings get org.gnome.shell enabled-extensions
 
 ---
 
-## 📌 Mejoras futuras
+## Mejoras futuras
 
 - Automatizar instalación de extensiones GNOME
 - Script `post-install.sh` para ajustes visuales
@@ -95,7 +95,7 @@ gsettings get org.gnome.shell enabled-extensions
 
 ---
 
-## 📜 Licencia
+## Licencia
 
 MIT. Libre para usar, modificar y adaptar.
 
