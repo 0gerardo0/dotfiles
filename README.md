@@ -58,10 +58,10 @@ sh -c "$(curl -fsLS get.chezmoi.io/lb)" -- init gerardozuniga --apply
 sudo pacman -S --needed - < ~/.pkglist
 ```
 
-### Paquetes AUR:
+### Paquetes AUR [Instalar con un AUR helper deseado]:
 
 ```bash
-yay -S --needed - < ~/.pkglist.aur
+paru -S --needed - < ~/.pkglist.aur
 ```
 
 ---
