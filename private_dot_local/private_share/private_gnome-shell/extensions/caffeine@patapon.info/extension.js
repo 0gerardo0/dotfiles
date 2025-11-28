@@ -56,6 +56,7 @@ const TRIGGER_APPS_MODE = 'trigger-apps-mode';
 const INDICATOR_POSITION = 'indicator-position';
 const INDICATOR_INDEX = 'indicator-position-index';
 const INDICATOR_POS_MAX = 'indicator-position-max';
+const CLI_TOGGLE_KEY = 'cli-toggle';
 
 const ColorInterface = '<node> \
   <interface name="org.gnome.SettingsDaemon.Color"> \
@@ -234,11 +235,11 @@ const InhibitorManager = GObject.registerClass({
     }
 
     _findRunningApp() {
-        let possibleTriggerApps = this._settings.get_strv(INHIBIT_APPS_KEY);
-        let runningApps = this._appSystem.get_running();
+        const possibleTriggerApps = this._settings.get_strv(INHIBIT_APPS_KEY);
+        const runningApps = this._appSystem.get_running();
 
-        for (let app of runningApps) {
-            let appId = app.get_id();
+        for (const app of runningApps) {
+            const appId = app.get_id();
             if (possibleTriggerApps.includes(appId)) {
                 return appId;
             }
@@ -248,10 +249,10 @@ const InhibitorManager = GObject.registerClass({
     }
 
     _findFocusedApp() {
-        let possibleTriggerApps = this._settings.get_strv(INHIBIT_APPS_KEY);
-        let focusedApp = Shell.WindowTracker.get_default().focus_app;
+        const possibleTriggerApps = this._settings.get_strv(INHIBIT_APPS_KEY);
+        const focusedApp = Shell.WindowTracker.get_default().focus_app;
         if (focusedApp !== null) {
-            let appId = focusedApp.get_id();
+            const appId = focusedApp.get_id();
             if (possibleTriggerApps.includes(appId)) {
                 return appId;
             }
@@ -261,11 +262,11 @@ const InhibitorManager = GObject.registerClass({
     }
 
     _findActiveApp() {
-        let possibleTriggerApps = this._settings.get_strv(INHIBIT_APPS_KEY);
-        let activeWorkspace = global.workspace_manager.get_active_workspace();
+        const possibleTriggerApps = this._settings.get_strv(INHIBIT_APPS_KEY);
+        const activeWorkspace = global.workspace_manager.get_active_workspace();
 
-        for (let appId of possibleTriggerApps) {
-            let app = this._appSystem.lookup_app(appId);
+        for (const appId of possibleTriggerApps) {
+            const app = this._appSystem.lookup_app(appId);
             if (app !== null) {
                 if (app.is_on_workspace(activeWorkspace)) {
                     return appId;
@@ -277,7 +278,7 @@ const InhibitorManager = GObject.registerClass({
     }
 
     _getInhibitReasons() {
-        let reasons = [];
+        const reasons = [];
         if (this.isFullscreen() && this._settings.get_boolean(FULLSCREEN_KEY)) {
             reasons.push('fullscreen');
         }
@@ -335,7 +336,7 @@ const InhibitorManager = GObject.registerClass({
         // Ignore any reasons in the ignore list, then save them
         reasons = reasons.filter((n) => !this._ignoredReasons.includes(n));
         this._lastReasons = [...reasons];
-        let shouldInhibit = reasons.length !== 0;
+        const shouldInhibit = reasons.length !== 0;
 
         /* If no trigger app is running, and the light is in app-only mode,
            and we left it blocked, unblock it
@@ -389,20 +390,20 @@ const InhibitorManager = GObject.registerClass({
             inhibitFlags = 4;
         } else {
             // Inhibit the session being marked as idle
-            inhibitFlags = 12;
+            inhibitFlags = 8;
         }
 
         // Pack the parameters for DBus
-        let params = [
+        const params = [
             GLib.Variant.new_string('caffeine-gnome-extension'),
             GLib.Variant.new_uint32(0),
             GLib.Variant.new_string('Inhibit by %s'.format(this._name)),
             GLib.Variant.new_uint32(inhibitFlags)
         ];
-        let paramsVariant = GLib.Variant.new_tuple(params);
+        const paramsVariant = GLib.Variant.new_tuple(params);
 
         // Synchronously add the inhibitor
-        let cookieTuple = this._sessionManager.call_sync('Inhibit', paramsVariant,
+        const cookieTuple = this._sessionManager.call_sync('Inhibit', paramsVariant,
             Gio.DBusCallFlags.NONE, -1, null);
         if (cookieTuple !== null) {
             this._inhibitorCookie = cookieTuple.get_child_value(0).get_uint32();
@@ -423,7 +424,7 @@ const InhibitorManager = GObject.registerClass({
     }
 
     isFullscreen() {
-        let monitorCount = global.display.get_n_monitors();
+        const monitorCount = global.display.get_n_monitors();
         for (let i = 0; i < monitorCount; i++) {
             if (global.display.get_monitor_in_fullscreen(i)) {
                 return true;
@@ -542,13 +543,16 @@ const CaffeineToggle = GObject.registerClass({
             this._iconDeactivated = null;
             this.gicon = null;
         });
+
+        // Set menu visibility
+        this.visible = this._settings.get_boolean(SHOW_TOGGLE_KEY);
     }
 
     _syncTimers(resetDefault) {
         this._itemsSection.removeAll();
         this._timerItems.clear();
         // Get duration list and add '0' for the 'infinite' entry (no timer)
-        let durationValues = this._settings.get_value(DURATION_TIMER_LIST).deepUnpack();
+        const durationValues = this._settings.get_value(DURATION_TIMER_LIST).deepUnpack();
         durationValues.push(0);
 
         // Create menu timer
@@ -557,8 +561,8 @@ const CaffeineToggle = GObject.registerClass({
             if (timer === 0) {
                 label = _('Infinite');
             } else {
-                let hours = Math.floor(timer / 3600);
-                let minutes = Math.floor((timer % 3600) / 60);
+                const hours = Math.floor(timer / 3600);
+                const minutes = Math.floor((timer % 3600) / 60);
                 switch (hours) {
                 case 0:
                     break;
@@ -729,6 +733,22 @@ class Caffeine extends QuickSettings.SystemIndicator {
             // Restore Caffeine as enabled (fake a user click)
             this._forceToggleClick();
         }
+
+        // Connect command line toggle
+        this._settings.set_boolean(CLI_TOGGLE_KEY, this._state);
+        this._settings.connectObject(
+            `changed::${CLI_TOGGLE_KEY}`,
+            () => this._commandStateChanged(),
+            this);
+    }
+
+    _commandStateChanged() {
+        const commandState = this._settings.get_boolean(CLI_TOGGLE_KEY);
+        if (commandState === this._state) {
+            return;
+        }
+
+        this._handleToggleClick();
     }
 
     _forceToggleClick() {
@@ -765,7 +785,7 @@ class Caffeine extends QuickSettings.SystemIndicator {
 
     _updateMaxPosition() {
         let pos = -1;
-        let indicators = QuickSettingsMenu._indicators.get_children();
+        const indicators = QuickSettingsMenu._indicators.get_children();
 
         // Count visible items in the status area
         indicators.forEach((indicator) => {
@@ -787,7 +807,7 @@ class Caffeine extends QuickSettings.SystemIndicator {
             // Skip invisible indicator
             let targetIndicator =
                 QuickSettingsMenu._indicators.get_child_at_index(this.indicatorIndex);
-            let maxIndex = QuickSettingsMenu._indicators.get_n_children();
+            const maxIndex = QuickSettingsMenu._indicators.get_n_children();
             while (this.indicatorIndex < maxIndex && !targetIndicator.is_visible() &&
                    this.indicatorIndex > -1) {
                 this._incrementIndicatorPosIndex();
@@ -831,7 +851,7 @@ class Caffeine extends QuickSettings.SystemIndicator {
         this._timerEnable = true;
 
         // Get duration
-        let timerDelay = this._settings.get_int(TIMER_KEY);
+        const timerDelay = this._settings.get_int(TIMER_KEY);
 
         // Execute Timer only if duration isn't set on infinite time
         if (timerDelay !== 0) {
@@ -912,8 +932,11 @@ class Caffeine extends QuickSettings.SystemIndicator {
 
     _inhibitorUpdated() {
         // Update the tracked state
-        let oldState = this._state;
+        const oldState = this._state;
         this._state = this._inhibitorManager.getInhibitState();
+
+        // Sync command state
+        this._settings.set_boolean(CLI_TOGGLE_KEY, this._state);
 
         // Update the visual state and subtitle
         this._caffeineToggle.checked = this._state;
@@ -959,7 +982,11 @@ class Caffeine extends QuickSettings.SystemIndicator {
             }
         }
 
-        Main.osdWindowManager.show(-1, icon, message, null, null);
+        if (ShellVersion >= 49) {
+            Main.osdWindowManager.showAll(icon, message, null, null);
+        } else {
+            Main.osdWindowManager.show(-1, icon, message, null, null);
+        }
     }
 
     // Add the name of the app as subtitle
@@ -969,7 +996,7 @@ class Caffeine extends QuickSettings.SystemIndicator {
             return;
         }
 
-        let app = this._appSystem.lookup_app(appId);
+        const app = this._appSystem.lookup_app(appId);
         if (app === null) {
             this._caffeineToggle.subtitle = null;
             return;

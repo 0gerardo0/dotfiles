@@ -26,6 +26,15 @@ import Gio from 'gi://Gio';
 
 import { gettext as _ } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
+import * as Config from 'resource:///org/gnome/Shell/Extensions/js/misc/config.js';
+const ShellVersion = parseFloat(Config.PACKAGE_VERSION);
+
+// Required for GNOME 49, without breaking on earlier shells
+let GioUnix;
+try {
+    GioUnix = (await import('gi://GioUnix?version=2.0')).default;
+} catch {}
+
 export var AppsPage = GObject.registerClass(
 class CaffeineAppsPage extends Adw.PreferencesPage {
     _init(settings, settingsKey) {
@@ -40,16 +49,16 @@ class CaffeineAppsPage extends Adw.PreferencesPage {
 
         // Apps behavior group
         // --------------
-        let appsBehaviorGroup = new Adw.PreferencesGroup({
+        const appsBehaviorGroup = new Adw.PreferencesGroup({
             title: _('Trigger mode')
         });
 
         // Apps behavior select mode
-        let appsTriggerMode = new Gtk.StringList();
+        const appsTriggerMode = new Gtk.StringList();
         appsTriggerMode.append(_('Running'));
         appsTriggerMode.append(_('Focus'));
         appsTriggerMode.append(_('Active workspace'));
-        let appsTriggerModeRow = new Adw.ComboRow({
+        const appsTriggerModeRow = new Adw.ComboRow({
             title: _('Apps trigger Caffeine mode'),
             subtitle: _('Choose the way apps will trigger Caffeine'),
             model: appsTriggerMode,
@@ -62,7 +71,7 @@ class CaffeineAppsPage extends Adw.PreferencesPage {
 
         // Apps list group
         // --------------
-        let addAppsButton = new Gtk.Button({
+        const addAppsButton = new Gtk.Button({
             child: new Adw.ButtonContent({
                 icon_name: 'list-add-symbolic',
                 label: _('Add')
@@ -93,7 +102,12 @@ class CaffeineAppsPage extends Adw.PreferencesPage {
 
         // Update the list & Check if app still exist
         _apps.forEach((id) => {
-            const appInfo = Gio.DesktopAppInfo.new(id);
+            let appInfo = null;
+            if (ShellVersion >= 49) {
+                appInfo = GioUnix.DesktopAppInfo.new(id);
+            } else {
+                appInfo = Gio.DesktopAppInfo.new(id);
+            }
 
             if (appInfo) {
                 this._listApps.push(id);
@@ -114,7 +128,7 @@ class CaffeineAppsPage extends Adw.PreferencesPage {
                 this.apps = {};
 
                 // Build new apps UI list
-                for (let i in this._listApps) {
+                for (const i in this._listApps) {
                     this.apps[i] = {};
                     this.apps[i].ButtonBox = new Gtk.Box({
                         orientation: Gtk.Orientation.HORIZONTAL,
@@ -132,7 +146,12 @@ class CaffeineAppsPage extends Adw.PreferencesPage {
                     });
 
                     // App info
-                    let appInfo = Gio.DesktopAppInfo.new(this._listApps[i]);
+                    let appInfo = null;
+                    if (ShellVersion >= 49) {
+                        appInfo = GioUnix.DesktopAppInfo.new(this._listApps[i]);
+                    } else {
+                        appInfo = Gio.DesktopAppInfo.new(this._listApps[i]);
+                    }
                     const appIcon = new Gtk.Image({
                         gicon: appInfo.get_icon(),
                         pixel_size: 32
@@ -151,7 +170,7 @@ class CaffeineAppsPage extends Adw.PreferencesPage {
                     this.appsGroup.add(this.apps[i].Row);
                 }
                 // Bind signals
-                for (let i in this.apps) {
+                for (const i in this.apps) {
                     this.apps[i].DeleteButton.connect('clicked', () => {
                         this._onRemoveApp(this._listApps[i]);
                     });

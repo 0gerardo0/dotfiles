@@ -12,4 +12,4 @@
 .config/qBittorrent
 .config/pulse
 .config/systemd
-
+.zshrc.secrets

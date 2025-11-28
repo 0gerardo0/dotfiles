@@ -55,9 +55,6 @@ class TemperatureItem extends QuickSettings.QuickSlider {
         });
 
         const ColorProxy = Gio.DBusProxy.makeProxyWrapper(ColorInterface);
-        const brightnessInterface = loadInterfaceXML('org.gnome.SettingsDaemon.Power.Screen');
-        const BrightnessProxy = Gio.DBusProxy.makeProxyWrapper(brightnessInterface);
-
 
         // Indicator options
         this._options = options;
@@ -78,15 +75,6 @@ class TemperatureItem extends QuickSettings.QuickSlider {
             });
     
     
-        // Write-only Brightness D-Bus
-        this._brightnessProxy = new BrightnessProxy(Gio.DBus.session, BRIGHTNESS_BUS_NAME, BRIGHTNESS_OBJECT_PATH,
-            (proxy, error) => {
-                if (error)
-                    log(`BrightnessProxy: ${error.message}`);
-            });
-
-
-
         this.connect('icon-clicked', () => {
             this._settings.set_boolean('night-light-enabled', 
                 !this._settings.get_boolean('night-light-enabled'))
@@ -164,7 +152,6 @@ class TemperatureItem extends QuickSettings.QuickSlider {
         // Unassign DBus proxies
         this._proxy.disconnect(this._proxyChangedId);
         this._proxy = null;
-        this._brightnessProxy = null;
 
         if(this._blockHandlerId) {
              GLib.Source.remove(this._blockHandlerId)

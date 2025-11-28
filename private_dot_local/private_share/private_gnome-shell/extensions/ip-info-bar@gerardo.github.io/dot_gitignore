@@ -5,7 +5,9 @@ schemas/gschemas.compiled
 *.swp
 *.log
 *.lock
-
+locale/
+*.mo
+*.sh
 # Archivos personales o del sistema
 .DS_Store
 Thumbs.db
@@ -18,8 +20,6 @@ package-lock.json
 
 # Python
 __pycache__/
-*.py[cod]
-*.so
 *.egg
 *.egg-info/
 dist/

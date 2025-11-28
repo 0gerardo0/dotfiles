@@ -4,7 +4,6 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.zsh/powerlevel10k/.p10k.zsh ]] || source ~/.zsh/powerlevel10k/.p10k.zsh
 
@@ -32,6 +31,7 @@ alias l='lsd -av --group-dirs=first'
 alias cat='bat'
 alias gitlog='git log --oneline --reverse'
 alias gitlogform='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+alias transesp='trans en:es '
 eval "$(thefuck --alias)"
 # You can use whatever you want as an alias, like for Mondays:
 eval "$(thefuck --alias FUCK)"
@@ -101,8 +101,8 @@ export LESS=-R
 export PATH=$PATH:/usr/bin
 
 if [ -z "$SSH_AUTH_SOCK" ] && [ "$(id -u)" -ne 0 ]; then
-  eval "$(ssh-agent -s)"
-  ssh-add ~/.ssh/id_rsa
+  eval "$(ssh-agent -s)" > /dev/null
+  ssh-add ~/.ssh/id_rsa 2> /dev/null
 fi
 
 export PATH=$PATH:$HOME/repos/platform-tools/
@@ -110,3 +110,10 @@ export PATH="$HOME/.local/bin:$PATH"
 export XDG_SEAT_PATH=/org/freedesktop/DisplayManager/SeatX
 export PATH="$HOME/repos/.npm-global/bin:$PATH"
 
+if [ -f "$HOME/.zshrc.secrets" ]; then
+    source "$HOME/.zshrc.secrets"
+fi
+
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"

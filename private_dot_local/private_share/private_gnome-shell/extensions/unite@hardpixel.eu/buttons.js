@@ -4,7 +4,7 @@ import Clutter from 'gi://Clutter'
 import { AppMenu } from 'resource:///org/gnome/shell/ui/appMenu.js'
 import * as Main from 'resource:///org/gnome/shell/ui/main.js'
 import * as PanelMenu from 'resource:///org/gnome/shell/ui/panelMenu.js'
-import * as Animation from 'resource:///org/gnome/shell/ui/animation.js'
+import * as Animation from './animation.js'
 
 export const AppmenuLabel = GObject.registerClass(
   class UniteAppmenuLabel extends PanelMenu.Button {
@@ -31,7 +31,7 @@ export const AppmenuLabel = GObject.registerClass(
       this._label = new St.Label({ y_align: Clutter.ActorAlign.CENTER })
       this._container.add_child(this._label)
 
-      this._spinner = new Animation.Spinner(16, { animate: true, hideOnStop: true })
+      this._spinner = new Animation.Spinner(14, { animate: true, hideOnStop: true })
       this._container.add_child(this._spinner)
 
       const menu = new AppMenu(this)

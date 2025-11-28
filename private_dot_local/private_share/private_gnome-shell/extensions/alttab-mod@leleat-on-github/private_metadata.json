@@ -6,9 +6,10 @@
   "shell-version": [
     "46",
     "47",
-    "48"
+    "48",
+    "49"
   ],
   "url": "https://github.com/Leleat/AltTab-Mod",
   "uuid": "alttab-mod@leleat-on-github",
-  "version": 21
+  "version": 22
 }

@@ -42,7 +42,6 @@ export const NightLightExtensionPrefs = GObject.registerClass({
         'show_always_toggle_switch',
         'show_status_icon_toggle_switch',
         'swap_axis_toggle_switch',
-        'brightness_sync_toggle_switch',
         'enable_always_toggle_switch',
         /* Temperature range */
         'spinbutton_maximum', 'spinbutton_minimum',
@@ -79,8 +78,6 @@ export const NightLightExtensionPrefs = GObject.registerClass({
             (_, state) => !this._preferences.set_boolean('show-status-icon', state));
         this._swap_axis_toggle_switch.connect('state-set',
             (_, state) => !this._preferences.set_boolean('swap-axis', state));
-        this._brightness_sync_toggle_switch.connect('state-set',
-            (_, state) => !this._preferences.set_boolean('brightness-sync', state));
         this._enable_always_toggle_switch.connect('state-set',
             (_, state) => !this._preferences.set_boolean('enable-always', state));
 
@@ -104,7 +101,6 @@ export const NightLightExtensionPrefs = GObject.registerClass({
         this._show_always_toggle_switch.active = this._preferences.get_boolean('show-always');
         this._show_status_icon_toggle_switch.active = this._preferences.get_boolean('show-status-icon');
         this._swap_axis_toggle_switch.active = this._preferences.get_boolean('swap-axis');
-        this._brightness_sync_toggle_switch.active = this._preferences.get_boolean('brightness-sync');
         this._enable_always_toggle_switch.active = this._preferences.get_boolean('enable-always');
 
         // Update temperature range values
