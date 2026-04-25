@@ -78,6 +78,30 @@ Archivos principales en `~/.config/hypr/`:
 
 ---
 
+## Configuracion de Waybar
+
+Archivos en `~/.config/waybar/`:
+
+- `config` - Configuracion principal (modulos, display)
+- `style.css` - Estilos visuales
+- `config-edp` - Configuracion para pantalla integrada
+- Scripts: `volume-scaled.sh`, `mediaplayer.py`
+
+Modulos activos:
+- workspaces, clock, network, temperature, backlight, pulseaudio, bluetooth, battery, tray
+
+---
+
+## Scripts de Hyprland
+
+En `~/.config/hypr/scripts/`:
+
+- `wallpapers.sh` - Wallpaper dinamico
+- `dynamic_bar.sh` - Barra dinamica
+- `watchdog_bar.sh` - Monitoreo de barra
+
+---
+
 ## Documentacion adicional
 
 - [config/kitty/OPTIMIZACION_TERMINAL.md](config/kitty/OPTIMIZACION_TERMINAL.md) - Notas de optimizacion de terminal
