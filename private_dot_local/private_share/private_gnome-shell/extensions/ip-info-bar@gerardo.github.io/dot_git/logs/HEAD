@@ -1,0 +1,31 @@
+0000000000000000000000000000000000000000 c057c57dfcd6026d9fdab25308bd13f4b1d2efce Gerardo <therambien@hotmail.com> 1760389842 -0600	clone: from github.com:0gerardo0/IP-Info-Bar.git
+c057c57dfcd6026d9fdab25308bd13f4b1d2efce 355048702afa49396dcad989d4478afdb4b5b139 Gerardo <therambien@hotmail.com> 1760389892 -0600	checkout: moving from master to develop
+355048702afa49396dcad989d4478afdb4b5b139 c057c57dfcd6026d9fdab25308bd13f4b1d2efce Gerardo <therambien@hotmail.com> 1760390059 -0600	checkout: moving from develop to master
+c057c57dfcd6026d9fdab25308bd13f4b1d2efce 355048702afa49396dcad989d4478afdb4b5b139 Gerardo <therambien@hotmail.com> 1760390063 -0600	merge develop: Fast-forward
+355048702afa49396dcad989d4478afdb4b5b139 355048702afa49396dcad989d4478afdb4b5b139 Gerardo <therambien@hotmail.com> 1760416196 -0600	checkout: moving from master to develop
+355048702afa49396dcad989d4478afdb4b5b139 355048702afa49396dcad989d4478afdb4b5b139 Gerardo <therambien@hotmail.com> 1760416232 -0600	checkout: moving from develop to feature/copy-to-clipboard
+355048702afa49396dcad989d4478afdb4b5b139 355048702afa49396dcad989d4478afdb4b5b139 Gerardo <therambien@hotmail.com> 1760429139 -0600	checkout: moving from feature/copy-to-clipboard to develop
+355048702afa49396dcad989d4478afdb4b5b139 355048702afa49396dcad989d4478afdb4b5b139 Gerardo <therambien@hotmail.com> 1760429152 -0600	checkout: moving from develop to feature/copy-to-clipboard
+355048702afa49396dcad989d4478afdb4b5b139 355048702afa49396dcad989d4478afdb4b5b139 Gerardo <therambien@hotmail.com> 1760429381 -0600	checkout: moving from feature/copy-to-clipboard to develop
+355048702afa49396dcad989d4478afdb4b5b139 355048702afa49396dcad989d4478afdb4b5b139 Gerardo <therambien@hotmail.com> 1760429452 -0600	checkout: moving from develop to feature/copy-to-clipboard
+355048702afa49396dcad989d4478afdb4b5b139 46c6830d83f23a6f8590752d961f3c4b6d86ae90 Gerardo <therambien@hotmail.com> 1760429483 -0600	commit: feat(ui): añade la funcion de copiar al clipboard
+46c6830d83f23a6f8590752d961f3c4b6d86ae90 355048702afa49396dcad989d4478afdb4b5b139 Gerardo <therambien@hotmail.com> 1760429495 -0600	checkout: moving from feature/copy-to-clipboard to develop
+355048702afa49396dcad989d4478afdb4b5b139 1808877a8089b4cb4a1e7e91fa59a65947d59cee Gerardo <therambien@hotmail.com> 1760429503 -0600	merge feature/copy-to-clipboard: Merge made by the 'ort' strategy.
+1808877a8089b4cb4a1e7e91fa59a65947d59cee 355048702afa49396dcad989d4478afdb4b5b139 Gerardo <therambien@hotmail.com> 1760429534 -0600	checkout: moving from develop to master
+355048702afa49396dcad989d4478afdb4b5b139 1808877a8089b4cb4a1e7e91fa59a65947d59cee Gerardo <therambien@hotmail.com> 1760429546 -0600	merge develop: Fast-forward
+1808877a8089b4cb4a1e7e91fa59a65947d59cee 1808877a8089b4cb4a1e7e91fa59a65947d59cee Gerardo <therambien@hotmail.com> 1760429647 -0600	checkout: moving from master to develop
+1808877a8089b4cb4a1e7e91fa59a65947d59cee 1808877a8089b4cb4a1e7e91fa59a65947d59cee Gerardo <therambien@hotmail.com> 1760429705 -0600	checkout: moving from develop to feature/parse-copied-text
+1808877a8089b4cb4a1e7e91fa59a65947d59cee 2423606e85c3074e07a71db9e19384a5d8b8708e Gerardo <therambien@hotmail.com> 1760430458 -0600	commit: feat(ui): pasea el texto copiado para incluir solo el dato
+2423606e85c3074e07a71db9e19384a5d8b8708e 1808877a8089b4cb4a1e7e91fa59a65947d59cee Gerardo <therambien@hotmail.com> 1760430473 -0600	checkout: moving from feature/parse-copied-text to develop
+1808877a8089b4cb4a1e7e91fa59a65947d59cee 6b1352f70c912314834bc90a83194c07ba7ac02d Gerardo <therambien@hotmail.com> 1760430482 -0600	merge feature/parse-copied-text: Merge made by the 'ort' strategy.
+6b1352f70c912314834bc90a83194c07ba7ac02d 1808877a8089b4cb4a1e7e91fa59a65947d59cee Gerardo <therambien@hotmail.com> 1760430505 -0600	checkout: moving from develop to master
+1808877a8089b4cb4a1e7e91fa59a65947d59cee 6b1352f70c912314834bc90a83194c07ba7ac02d Gerardo <therambien@hotmail.com> 1760430517 -0600	merge develop: Fast-forward
+6b1352f70c912314834bc90a83194c07ba7ac02d 6b1352f70c912314834bc90a83194c07ba7ac02d Gerardo <therambien@hotmail.com> 1760430547 -0600	checkout: moving from master to develop
+6b1352f70c912314834bc90a83194c07ba7ac02d aa9604af080eea65cc8e9dda6d394229706b00a5 Gerardo <therambien@hotmail.com> 1762562521 -0600	commit: fix(update): actualiza metadatos y agrega diagrama
+aa9604af080eea65cc8e9dda6d394229706b00a5 6b1352f70c912314834bc90a83194c07ba7ac02d Gerardo <therambien@hotmail.com> 1762562553 -0600	checkout: moving from develop to master
+6b1352f70c912314834bc90a83194c07ba7ac02d aa9604af080eea65cc8e9dda6d394229706b00a5 Gerardo <therambien@hotmail.com> 1762562653 -0600	merge develop: Fast-forward
+aa9604af080eea65cc8e9dda6d394229706b00a5 aa9604af080eea65cc8e9dda6d394229706b00a5 Gerardo <therambien@hotmail.com> 1762562695 -0600	checkout: moving from master to develop
+aa9604af080eea65cc8e9dda6d394229706b00a5 aa9604af080eea65cc8e9dda6d394229706b00a5 Gerardo <therambien@hotmail.com> 1762580964 -0600	checkout: moving from develop to fix/review-feedback
+aa9604af080eea65cc8e9dda6d394229706b00a5 1c47f99ddc4a3cff16de09cbc68962854721cec2 Gerardo <therambien@hotmail.com> 1762588550 -0600	commit: fix(review): corrige la fuga de memoria destruye objetos y actualiza metadata con correcciones
+1c47f99ddc4a3cff16de09cbc68962854721cec2 aa9604af080eea65cc8e9dda6d394229706b00a5 Gerardo <therambien@hotmail.com> 1762588569 -0600	checkout: moving from fix/review-feedback to develop
+aa9604af080eea65cc8e9dda6d394229706b00a5 ca21c7c5e3a6bb2bee1d114a9451f73310169f23 Gerardo <therambien@hotmail.com> 1762588617 -0600	merge fix/review-feedback: Merge made by the 'ort' strategy.

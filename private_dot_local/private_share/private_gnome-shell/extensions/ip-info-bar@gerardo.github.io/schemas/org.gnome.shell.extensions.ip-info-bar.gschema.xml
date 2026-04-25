@@ -1,0 +1,14 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.ip-info-bar" path="/org/gnome/shell/extensions/ip-info-bar/">
+
+    <key name="detailed-view" type="b">
+      <default>false</default>
+      <summary>Modo de Vista Detallada</summary>
+      <description>Si está activado, muestra información adicional como el nombre de la interfaz y la dirección MAC, además de la dirección IP.</description>
+    </key>
+
+  </schema>
+</schemalist>
+

@@ -1,0 +1,34 @@
+0000000000000000000000000000000000000000 d3c3957b3226f2df20d96854bf8a754cae463c1f Gerardo Zúñiga <TheRambien@hotmail.com> 1744781449 -0500	commit (initial): chore(init): initial project setup
+d3c3957b3226f2df20d96854bf8a754cae463c1f 1de3b0458deeb23fb52459d0325a5d7fc3ed1749 Gerardo Zúñiga <TheRambien@hotmail.com> 1744781754 -0500	commit: feat(js): add style injection logic
+1de3b0458deeb23fb52459d0325a5d7fc3ed1749 b8994eeaa3564fc5c71c43d75d47fe7050bd7565 Gerardo Zúñiga <TheRambien@hotmail.com> 1744781792 -0500	commit: style(css): apply transparency and shadow
+b8994eeaa3564fc5c71c43d75d47fe7050bd7565 001ab5471aade8bf444f832fdecc27f5b94ea529 Gerardo Zúñiga <TheRambien@hotmail.com> 1744789276 -0500	commit: style: customize sliders
+001ab5471aade8bf444f832fdecc27f5b94ea529 f0e9bac42c63a1d0a0967d713147410335ccc8d7 Gerardo Zúñiga <TheRambien@hotmail.com> 1744793615 -0500	commit: add styles notiffication and events
+f0e9bac42c63a1d0a0967d713147410335ccc8d7 567440c12d10b568e26044a87ea71ae09c98d994 Gerardo Zúñiga <TheRambien@hotmail.com> 1744840340 -0500	commit: add news styles all popup menu
+567440c12d10b568e26044a87ea71ae09c98d994 89a951f1c5bba82fb7685d5b330a9351a734916b Gerardo Zúñiga <TheRambien@hotmail.com> 1744853504 -0500	commit: add new styles toggles and ripple (pending)
+89a951f1c5bba82fb7685d5b330a9351a734916b ccb7a39602bae7e14eb5f9d63782685cf5989eec Gerardo Zúñiga <TheRambien@hotmail.com> 1744878181 -0500	commit: extension only apply styles css
+ccb7a39602bae7e14eb5f9d63782685cf5989eec bd09ef8533fe1cfb015068d46a8f040fb7254d7f Gerardo Zúñiga <TheRambien@hotmail.com> 1744878322 -0500	commit: update metadata, add schema and clean css styles (pending)
+bd09ef8533fe1cfb015068d46a8f040fb7254d7f b658b7f36b727559e7cc8ac2d018ab3135467a31 Gerardo Zúñiga <TheRambien@hotmail.com> 1744878399 -0500	commit: experiment add prefs dynamic style values
+b658b7f36b727559e7cc8ac2d018ab3135467a31 97b259ca13c89bac2f2f216adb06fad4ca149219 Gerardo Zúñiga <TheRambien@hotmail.com> 1744917011 -0500	commit: new name and add other proprties
+97b259ca13c89bac2f2f216adb06fad4ca149219 ea75c41c3cb8dded022c19ee3695a58fa7e44dc5 Gerardo Zúñiga <TheRambien@hotmail.com> 1744917094 -0500	commit: remove irrelevante styles
+ea75c41c3cb8dded022c19ee3695a58fa7e44dc5 f0af09f7ff801db0e5b0e1b724c5b224c0e81f6f Gerardo Zúñiga <TheRambien@hotmail.com> 1744917174 -0500	commit: add new logic for inyected dynamic css
+f0af09f7ff801db0e5b0e1b724c5b224c0e81f6f 60334653ed81dbc18fc9bc6c7511b0a23be30f2f Gerardo Zúñiga <TheRambien@hotmail.com> 1744917232 -0500	commit: fixed prefs silder opacity panel
+60334653ed81dbc18fc9bc6c7511b0a23be30f2f 022cb241136593bfd5a3ea122a3fce13bef7d15c Gerardo Zúñiga <TheRambien@hotmail.com> 1744917274 -0500	commit: add use-custom-style key
+022cb241136593bfd5a3ea122a3fce13bef7d15c 022cb241136593bfd5a3ea122a3fce13bef7d15c Gerardo Zúñiga <TheRambien@hotmail.com> 1745011122 -0500	reset: moving to HEAD
+022cb241136593bfd5a3ea122a3fce13bef7d15c 9ed9066ea2ca28ba55ac8453beea33781387170d Gerardo Zúñiga <TheRambien@hotmail.com> 1745019117 -0500	commit: reset: delete experimet prefs - not working
+9ed9066ea2ca28ba55ac8453beea33781387170d 01a85d3ee87d33ac57b069c31be03fa2abc69aca Gerardo Zúñiga <TheRambien@hotmail.com> 1745034229 -0500	commit: changed name for other files css
+01a85d3ee87d33ac57b069c31be03fa2abc69aca 95cc3ec614a7c781359427092cb0a7fecbbbc8f1 Gerardo Zúñiga <TheRambien@hotmail.com> 1745034330 -0500	commit: include a funtional prefs styles - reorganitation css file
+95cc3ec614a7c781359427092cb0a7fecbbbc8f1 fb95a812b74cf5e735bc8500098dcd6fbf4b9470 Gerardo Zúñiga <TheRambien@hotmail.com> 1745034373 -0500	commit: add messege for scale keys
+fb95a812b74cf5e735bc8500098dcd6fbf4b9470 05bc5afac6e3c11c1982ec3bb934720cc1a677a4 Gerardo Zúñiga <TheRambien@hotmail.com> 1745046474 -0500	commit: Temporary fix for overview mode transparency
+05bc5afac6e3c11c1982ec3bb934720cc1a677a4 3c56987d6d570bab8eac1015e9ced039a2e1d03a Gerardo Zúñiga <TheRambien@hotmail.com> 1745046715 -0500	commit: add new slider - overviewOpacity
+3c56987d6d570bab8eac1015e9ced039a2e1d03a 67a570d4418e054d54a778c7d5e58a9694d548b6 Gerardo Zúñiga <TheRambien@hotmail.com> 1745046851 -0500	commit: added new properties and formatting
+67a570d4418e054d54a778c7d5e58a9694d548b6 b87f2f2913408e48b8299fb0924f0ae40aa7836e Gerardo Zúñiga <TheRambien@hotmail.com> 1745046948 -0500	commit: added new key
+b87f2f2913408e48b8299fb0924f0ae40aa7836e 0000000000000000000000000000000000000000 Gerardo Zúñiga <TheRambien@hotmail.com> 1748784971 -0600	Branch: renamed refs/heads/main to refs/heads/master
+0000000000000000000000000000000000000000 b87f2f2913408e48b8299fb0924f0ae40aa7836e Gerardo Zúñiga <TheRambien@hotmail.com> 1748784971 -0600	Branch: renamed refs/heads/main to refs/heads/master
+b87f2f2913408e48b8299fb0924f0ae40aa7836e 2ce1ae246c819cdac52a839f005d7cc319587592 Gerardo Zúñiga <TheRambien@hotmail.com> 1748788346 -0600	commit: add a provisional schema
+2ce1ae246c819cdac52a839f005d7cc319587592 5f0c5a2c07ad67d98d4b3ca8f067937fcfd7fcd0 Gerardo Zúñiga <TheRambien@hotmail.com> 1748788371 -0600	commit: add a gitignore
+5f0c5a2c07ad67d98d4b3ca8f067937fcfd7fcd0 4cb7013c93364bf46e651058891033df322e83c9 Gerardo Zúñiga <TheRambien@hotmail.com> 1748788459 -0600	commit: upload a readme
+4cb7013c93364bf46e651058891033df322e83c9 d19b7b63969bc4a05bc3127e115dc17368d4a6a4 Gerardo Zúñiga <TheRambien@hotmail.com> 1748788480 -0600	commit: add a license terms
+d19b7b63969bc4a05bc3127e115dc17368d4a6a4 2ad52808d9891adcbfd96acdf94e528bfd1ace4f Gerardo Zúñiga <TheRambien@hotmail.com> 1748788646 -0600	commit: update gitignore
+2ad52808d9891adcbfd96acdf94e528bfd1ace4f c1b9558fc05050450306b8a1c66916a9da8e392d Gerardo Zúñiga <TheRambien@hotmail.com> 1748788724 -0600	commit: update readme
+c1b9558fc05050450306b8a1c66916a9da8e392d 39ec3e9efe51626fa37b8f341991aeb946df49a4 Gerardo Zúñiga <TheRambien@hotmail.com> 1748789000 -0600	commit: Remove ignored files from repo
+39ec3e9efe51626fa37b8f341991aeb946df49a4 52ad2d4507555c6c25062d9395669431fbddcd94 Gerardo Zúñiga <TheRambien@hotmail.com> 1748789234 -0600	commit: update readme

@@ -1,0 +1,40 @@
+# Esquemas compilados (se regeneran localmente)
+schemas/gschemas.compiled
+gnome-shell-dark
+stylesheet-original
+
+# Archivos de configuración de editor
+*.swp
+*~
+*.suo
+*.tmp
+*.bak
+.DS_Store
+
+# Carpeta de cache de GJS 
+.gjs-cache/
+
+# Node modules
+node_modules/
+
+# Archivos de build 
+dist/
+build/
+
+# Archivos de log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de respaldo de IDEs/editores
+.vscode/
+.idea/
+
+# Archivos binarios y de configuración locales
+*.so
+*.pdb
+
+# Ignorar entornos virtuales
+venv/
+ENV/
+

@@ -1,0 +1,126 @@
+
+/* Top Bar */
+#panel {
+    background-color: rgba(50, 50, 50, 0.9);
+    box-shadow: 0px 0px 15px 2px rgba(211, 211, 211, 0.3);
+    height: 2em; }
+    #panel .panel-button {
+        border-radius: 999px;
+        font-weight: bold;
+        color: #ffffff; }
+        #panel .panel-button:focus, #panel .panel-button:hover {
+            box-shadow: unset 0px 0px 15px 1px rgba(255, 255, 255, 0.3); }
+        #panel .panel-button:active, #panel .panel-button:checked {
+            box-shadow: unset 0 0 15px 10px rgba(255, 255, 255, 0.9);
+            font-weight: bold;
+            color: #000; }
+      
+    #panel .panel-button.clock-display {
+        border-radius: 999px;
+        font-weight: bold;
+        color: #ffffff; }
+        #panel .panel-button.clock-display .clock {
+            border-radius: 999px; }
+        #panel .panel-button.clock-display:focus .clock, #panel .panel-button.clock-display:hover .clock {
+            box-shadow: unset 0 0 15px 1px rgba(255, 255, 255, 0.3); }
+        #panel .panel-button.clock-display:active .clock, #panel .panel-button.clock-display:checked .clock {
+            box-shadow: unset 0 0 15px 10px rgba(255, 255, 255, 0.9);
+            font-weight: bold;
+            color: #000; }
+
+
+
+    #panel:overview, #panel.unlock-screen, #panel.login-screen {
+        background-color: transparent; }
+        #panel:overview .panel-button {
+            border-radius: 999px;
+            font-weight: bold;
+            color: #fafafb; }
+        #panel:overview .panel-button:focus, #panel:overview .panel-button:hover {
+            box-shadow: unset 0 0 15px 1px rgba(250, 250, 251, 0.3); }
+        #panel:overview .panel-button:active, #panel:overview .panel-button:checked {
+            box-shadow: unset 0 0 15px 10px rgba(250, 250, 251, 0.9);
+            font-weight: bold;
+            color: #000; }
+        
+    #panel:overview .panel-button.clock-display {
+        border-radius: 999px;
+        font-weight: bold;
+        color: #fafafb; }
+        #panel:overview .panel-button.clock-display .clock {
+            border-radius: 999px; }
+        #panel:overview .panel-button.clock-display:focus .clock, #panel:overview .panel-button.clock-display:hover .clock {
+            box-shadow: unset 0 0 15px 1px rgba(250, 250, 251, 0.3); }
+        #panel:overview .panel-button.clock-display:active .clock, #panel:overview .panel-button.clock-display:checked .clock {
+            box-shadow: unset 0 0 15px 10px rgba(250, 250, 251, 0.9);
+            font-weight: bold;
+            color: #000; }
+
+
+ /* Slider */
+.slider {
+    transition-duration: 50ms;
+    color: #ababab;
+    -barlevel-height: 4px;
+    -barlevel-background-color: rgba(150, 150, 150, 0.2);
+    -barlevel-active-background-color: -st-accent-color;
+    -barlevel-overdrive-color: #c01c28;
+    -barlevel-overdrive-separator-width: 1px;
+    -slider-handle-radius: 0.7em; }
+    .slider:hover {
+        color: #ffffffd0;
+        -barlevel-height: 4px;
+        -barlevel-background-color: rgba(150, 150, 150, 1);
+        -barlevel-active-background-color: -st-accent-color;
+        -barlevel-overdrive-color: #c01c28;
+        -barlevel-overdrive-separator-width: 1px;
+        -slider-handle-radius: 0.5em; }
+
+
+/* Notifications and events */
+.quick-toggle-menu, .message, .events-button, .world-clocks-button, .weather-button {
+    color: rgb(255, 255, 255);
+    background-color: rgba(94, 94, 94, 0.6); }
+    .quick-toggle-menu:hover, .message:hover, .events-button:hover, .world-clocks-button:hover, .weather-button:hover {
+    color: #ffffff;
+    background-color: st-lighten(#6e6e6e, 4%); }
+
+
+
+
+  /* Popovers/Menus */
+.popup-menu-boxpointer, .candidate-popup-boxpointer {
+    -arrow-rise: 10px; }
+    .popup-menu {
+        min-width: 15em;
+        color: #ffffff; }
+    .popup-menu.panel-menu {
+        margin-bottom: 1.75em; }
+    .popup-menu-content, .candidate-popup-content {
+        padding: 10px;
+        background-color: rgba(69, 69, 69, 0.6);
+        border-radius: 20px;
+        border: 1px solid transparent;
+        box-shadow: unset 0px 0px 18px 2px rgba(150, 150, 150, 0.4) }
+
+  
+/* Activities Ripple */
+.ripple-box {
+    background-color: rgba(10, 218, 218, 0.2);
+    box-shadow: 0 0 2px 2px rgba(104, 9, 181, 0.585);
+    width: 52px;
+    height: 52px;
+    border-radius: 0 0 52px 0; }
+    .ripple-box:rtl {
+      border-radius: 0 0 0 52px; }
+  
+  
+.quick-toggle {
+/* Move padding into the box; this is to allow menu arrows
+    to extend to the border */ }
+.quick-toggle > StBoxLayout {
+    spacing: 9px; }
+.quick-toggle.button {
+    padding: 0; } /* => Esto es para cambiar el tamaño de los botones del toggle buttons*/
+.quick-toggle-has-menu .quick-toggle:ltr {
+    border-radius: 999px 0 0 999px; }
