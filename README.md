@@ -88,7 +88,7 @@ Archivos en `~/.config/waybar/`:
 - Scripts: `volume-scaled.sh`, `mediaplayer.py`
 
 Modulos activos:
-- workspaces, window, clock, network, temperature, backlight, pulseaudio, bluetooth, battery, tray
+- workspaces, clock, network, temperature, backlight, pulseaudio, bluetooth, battery, tray
 
 ---
 
@@ -96,15 +96,15 @@ Modulos activos:
 
 En `~/.config/hypr/scripts/`:
 
-- `wallpapers.sh` - Wallpaper dinamico con cambio automatico
-- `dynamic_bar.sh` - Barra dinamica para multiples monitores
+- `wallpapers.sh` - Wallpaper dinamico
+- `dynamic_bar.sh` - Barra dinamica
 - `watchdog_bar.sh` - Monitoreo de barra
 
 ---
 
 ## Documentacion adicional
 
-- [OPTIMIZACION_TERMINAL.md](config/kitty/OPTIMIZACION_TERMINAL.md) - Notas de optimizacion de terminal
+- [config/kitty/OPTIMIZACION_TERMINAL.md](config/kitty/OPTIMIZACION_TERMINAL.md) - Notas de optimizacion de terminal
 
 ---
 
