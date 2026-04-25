@@ -1,18 +1,17 @@
 # Dotfiles de Gerardo
 
-Repositorio gestionado con [`chezmoi`](https://www.chezmoi.io/) para mantener y versionar mi entorno personal de desarrollo y escritorio en Arch Linux + GNOME.
+Repositorio gestionado con [`chezmoi`](https://www.chezmoi.io/) para mantener y versionar mi entorno personal de desarrollo y escritorio en Arch Linux + Hyprland.
 
-## Tecnologías y herramientas
+## Tecnologias y herramientas
 
-- **Sistema**: Arch Linux  
-- **DE**: GNOME  
-- **Shell**: ZSH con [Powerlevel10k](https://github.com/romkatv/powerlevel10k)  
+- **Sistema**: Arch Linux
+- **WM**: Hyprland
+- **Shell**: ZSH con [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 - **Terminal**: Kitty
-- **Terminal Plugins**  ZSH plugings in dot_zshrc
-- **Gestor de dotfiles**: [chezmoi](https://www.chezmoi.io/)  
+- **Terminal Plugins**: ZSH plugins in dot_zshrc
+- **Gestor de dotfiles**: [chezmoi](https://www.chezmoi.io/)
 - **Editor**: Neovim with [NvChad](https://nvchad.com/)
-- **Temas y apariencia**: GTK, Shell themes, iconos, fuentes  
-- **Extensiones**: GNOME Shell Extensions personalizadas  
+- **Barra**: Waybar
 
 ---
 
@@ -20,11 +19,12 @@ Repositorio gestionado con [`chezmoi`](https://www.chezmoi.io/) para mantener y 
 
 ```
 ~/.local/share/chezmoi/
-│
+|
 ├── dot_config/
-│   ├── gtk-3.0/         → Tema visual
+│   ├── hypr/            → Config de Hyprland
 │   ├── kitty/           → Config de terminal
-│   ├── nvim/            → Configuración de Neovim
+│   ├── nvim/            → Configuracion de Neovim
+│   ├── waybar/          → Config de barra
 │   ├── zsh/             → Plugins y Zsh extras
 │   └── ...              → Otras configuraciones
 │
@@ -32,13 +32,12 @@ Repositorio gestionado con [`chezmoi`](https://www.chezmoi.io/) para mantener y 
 ├── dot_p10k.zsh         → Tema Powerlevel10k
 ├── dot_pkglist          → Lista de paquetes instalados
 ├── dot_fonts/           → Fuentes personalizadas
-├── dot_themes/          → Temas GTK y GNOME Shell
-└── dot_icons/           → Iconos personalizados
+└── dot_themes/          → Temas y colores
 ```
 
 ---
 
-##  Instalación (restaurar dotfiles)
+## Instalacion (restaurar dotfiles)
 
 > Requiere tener `chezmoi` instalado.
 
@@ -66,31 +65,53 @@ paru -S --needed - < ~/.pkglist.aur
 
 ---
 
-## Apariencia y temas
+## Configuracion de Hyprland
 
-Incluye:
+Archivos principales en `~/.config/hypr/`:
 
-- Temas GTK y Shell (`~/.themes`)
-
-
+- `hyprland.conf` - Configuracion principal
+- `hyprpaper.conf` - Wallpaper
+- `hyprlock.conf` - Pantalla de bloqueo
+- `hypridle.conf` - Inactividad
+- `autostart.conf` - Aplicaciones al iniciar
+- `scripts/` - Scripts personalizados
 
 ---
 
-## Extensiones GNOME
+## Configuracion de Waybar
 
-La lista de extensiones puede instalarse manualmente o mediante backup. Consulta tus extensiones activas:
+Archivos en `~/.config/waybar/`:
 
-```bash
-gsettings get org.gnome.shell enabled-extensions
-```
+- `config` - Configuracion principal (modulos, display)
+- `style.css` - Estilos visuales
+- `config-edp` - Configuracion para pantalla integrada
+- Scripts: `volume-scaled.sh`, `mediaplayer.py`
+
+Modulos activos:
+- workspaces, window, clock, network, temperature, backlight, pulseaudio, bluetooth, battery, tray
+
+---
+
+## Scripts de Hyprland
+
+En `~/.config/hypr/scripts/`:
+
+- `wallpapers.sh` - Wallpaper dinamico con cambio automatico
+- `dynamic_bar.sh` - Barra dinamica para multiples monitores
+- `watchdog_bar.sh` - Monitoreo de barra
+
+---
+
+## Documentacion adicional
+
+- [OPTIMIZACION_TERMINAL.md](config/kitty/OPTIMIZACION_TERMINAL.md) - Notas de optimizacion de terminal
 
 ---
 
 ## Mejoras futuras
 
-- Automatizar instalación de extensiones GNOME
-- Script `post-install.sh` para ajustes visuales
-- Snapshot de configuraciones `dconf` importantes
+- Automatizar instalacion de extensiones
+- Script `post-install.sh` para ajustes
 - Capturas de pantalla del entorno
 
 ---
@@ -98,4 +119,3 @@ gsettings get org.gnome.shell enabled-extensions
 ## Licencia
 
 MIT. Libre para usar, modificar y adaptar.
-

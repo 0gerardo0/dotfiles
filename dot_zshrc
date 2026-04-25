@@ -9,6 +9,10 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.zsh/powerlevel10k/.p10k.zsh ]] || source ~/.zsh/powerlevel10k/.p10k.zsh
 
+# Optimizacion: Deshabilitar gitstatus/VCS que causa delay
+typeset -g POWERLEVEL9K_VCS_DISABLE_GITSTATUS_FORMATTING=true
+typeset -g POWERLEVEL9K_VCS_MAX_INDEX_SIZE_DIRTY=0
+
 # To customize search fzf
 [ -f ~/.zsh/.fzf/.fzf.zsh ] && source ~/.zsh/.fzf/.fzf.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -45,7 +49,7 @@ source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/zsh-archlinux-shortsaliases/archalinux.shortaliases.zsh
 source ~/.zsh/zsh-alias-finder/zsh-alias-finder.plugin.zsh
 source ~/.zsh/aliases-cheatsheet-pluguin/aliases.plugin.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# DESHABILITADO para velocidad: source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-sudo/zsh-sudo.zsh
 
@@ -56,9 +60,11 @@ export SAVEHIST=50000
 export HISTIGNORE="&:[bf]g:exit:history:top:clear:cd:cd ..:cd.."
 setopt INC_APPEND_HISTORY HIST_IGNORE_ALL_DUPS HIST_REDUCE_BLANKS HIST_SAVE_NO_DUPS HIST_IGNORE_SPACE NO_BANG_HIST
 
-# zsh completion / misc opts
+# zsh completion / misc opts (optimizado para cache)
 autoload -U compinit
-compinit -i
+compinit -C -d ~/.cache/zcompdump
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.cache/zcompdump
 zstyle ':completion:*' hosts off            # don't autocomplete host names
 unsetopt menu_complete                      # don't insert the first match upon ambiguous completion
 zstyle ':completion:*:*:*:*:*' menu select  # use an interactive menu (moveable highlight bar)
@@ -83,10 +89,10 @@ export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[01;36m'
 export LESS=-R
 
-# SSH Agent: verifica si funciona y agrega la clave
-if ! ssh-add -l > /dev/null 2>&1; then
-    eval "$(ssh-agent -s)" > /dev/null
-    ssh-add ~/.ssh/id_rsa 2> /dev/null || ssh-add ~/.ssh/id_ed25519 2> /dev/null
+# SSH Agent: reuse existing or start new only when needed
+if [[ -z "$SSH_AUTH_SOCK" ]] || ! ssh-add -l >/dev/null 2>&1; then
+    eval "$(ssh-agent -s)" >/dev/null
+    ssh-add ~/.ssh/id_rsa 2>/dev/null || ssh-add ~/.ssh/id_ed25519 2>/dev/null
 fi
 
 # Definicion de PATH y Variables de Entorno

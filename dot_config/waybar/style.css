@@ -1,0 +1,185 @@
+/* --- INTERACTIVE TOKYO NIGHT (COMPACT MODE) --- */
+
+* {
+    border: none;
+    font-family: "JetBrains Mono Nerd Font", "Cascadia Code", sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(26, 27, 38, 0.5);
+}
+
+/* ---------------------------------------------------------------
+   ESTADO 1: REPOSO (Zen / Estático)
+   Todo blanco y limpio. Fondo oscuro unificado.
+------------------------------------------------------------------ */
+#workspaces, #clock, #custom-media, #group-hardware, #battery, #tray, #idle_inhibitor, #network, #bluetooth, #temperature, #backlight, #custom-power, #hyprland-window, #pulseaudio, #custom-notifications {
+    background-color: #1a1b26;
+    color: #c0caf5;
+    
+    padding: 0px 8px;
+    margin: 1px 2px;
+    
+    border-radius: 4px;
+    border: 1px solid #414868;
+    
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ---------------------------------------------------------------
+   ESTADO 2 & 3: HOVER & ACTIVE
+------------------------------------------------------------------ */
+
+/* --- 1. APAGADO (Rojos) --- */
+#custom-power:hover {
+    color: #f7768e;
+    border-color: #f7768e;
+    background-color: rgba(247, 118, 142, 0.1);
+}
+#custom-power:active {
+    color: #ff0000;
+    border-color: #ff0000;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+    background-color: #1a1b26;
+}
+
+/* --- 2. RELOJ (Amarillos) --- */
+#clock:hover { color: #e0af68; border-color: #e0af68; }
+#clock:active { color: #ffff00; border-color: #ffff00; box-shadow: 0 0 8px rgba(255, 255, 0, 0.5); }
+
+/* --- 3. BATERÍA (Verdes) --- */
+#battery:hover { color: #9ece6a; border-color: #9ece6a; }
+#battery:active { color: #00ff00; border-color: #00ff00; box-shadow: 0 0 8px rgba(0, 255, 0, 0.5); }
+
+#battery.warning:not(.charging) { color: #ff9e64; border-color: #ff9e64; }
+#battery.critical:not(.charging) { color: #ff0000; animation: blink 0.5s infinite; }
+
+/* --- 4. RED (Morados) --- */
+#network:hover { color: #bb9af7; border-color: #bb9af7; }
+#network:active { color: #ff00ff; border-color: #ff00ff; box-shadow: 0 0 8px rgba(255, 0, 255, 0.5); }
+
+/* --- 5. BLUETOOTH (Azules) --- */
+#bluetooth:hover { color: #7aa2f7; border-color: #7aa2f7; }
+#bluetooth:active { color: #00ccff; border-color: #00ccff; box-shadow: 0 0 8px rgba(0, 204, 255, 0.5); }
+
+/* --- 6. AUDIO (Cianes) --- */
+#pulseaudio:hover { color: #7dcfff; border-color: #7dcfff; }
+#pulseaudio:active { color: #00ffff; border-color: #00ffff; box-shadow: 0 0 8px rgba(0, 255, 255, 0.5); }
+#pulseaudio.muted { color: #f7768e; }
+
+/* --- 6.5. NOTIFICACIONES (Cian) --- */
+#custom-notifications:hover { color: #7dcfff; border-color: #7dcfff; }
+
+/* --- 7. HARDWARE (Teal) --- */
+#group-hardware #cpu:hover, #group-hardware #memory:hover, #group-hardware #disk:hover {
+    color: #73daca;
+    border-color: #73daca;
+}
+
+/* --- WORKSPACES --- */
+#workspaces button {
+    color: #565f89;
+    padding: 0 4px;
+    transition: all 0.3s ease;
+}
+#workspaces button:hover {
+    color: #c0caf5;
+    background: #414868;
+}
+#workspaces button.active {
+    color: #1a1b26;
+    background: #7aa2f7;
+    border-radius: 3px;
+    min-width: 24px;
+}
+
+/* --- EXTRAS --- */
+#temperature:hover { color: #f7768e; border-color: #f7768e; }
+#backlight:hover { color: #e0af68; border-color: #e0af68; }
+
+/* Corrección de espaciado interior */
+#battery, #bluetooth, #network, #pulseaudio {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* --- ESTILO DEL CALENDARIO FLOTANTE (Tooltip) --- */
+
+tooltip {
+    background: #1a1b26;
+    border: 1px solid #7aa2f7;
+    border-radius: 10px;
+}
+
+tooltip label {
+    color: #c0caf5;
+    font-family: "JetBrains Mono Nerd Font", monospace;
+    padding: 10px;
+    font-size: 20px;
+}
+
+@keyframes blink {
+    to { background-color: #f7768e; color: #1a1b26; }
+}
+
+/* --- 1. GRUPO GENERAL (El módulo en reposo) --- */
+#group-hardware {
+    background-color: #24283b;
+    color: #c0caf5;
+    border-color: #414868;
+    
+    padding: 2px 8px;
+    margin: 1px 2px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+/* --- 2. ESTILO DE LOS MÓDULOS INTERNOS (CPU, RAM, DISK) --- */
+#group-hardware > .module {
+    background-color: #1a1b26;
+    color: #c0caf5;
+    
+    padding: 2px 10px;
+    margin: 2px 4px;
+    border-radius: 4px;
+    border: 1px solid #414868; 
+    transition: all 0.3s ease;
+}
+
+/* ---------------------------------------------------------------
+   ESTADO HOVER: REVELAR COLORES VIVOS (Tokyo Night Accents)
+------------------------------------------------------------------ */
+
+/* CPU: Amarillo/Naranja (#e0af68) */
+#group-hardware #cpu:hover {
+    color: #e0af68;
+    border-color: #e0af68;
+    background-color: rgba(224, 175, 104, 0.2);
+}
+
+/* MEMORY: Cian/Teal (#7dcfff) */
+#group-hardware #memory:hover {
+    color: #7dcfff;
+    border-color: #7dcfff;
+    background-color: rgba(125, 207, 255, 0.2);
+}
+
+/* DISK: Morado (#bb9af7) */
+#group-hardware #disk:hover {
+    color: #bb9af7;
+    border-color: #bb9af7;
+    background-color: rgba(187, 154, 247, 0.2);
+}
+
+/* TEMPERATURE (Por defecto, siempre roja para advertencia) */
+#group-hardware #temperature {
+    color: #f7768e;
+    border-color: #f7768e;
+}
+#group-hardware #temperature:hover {
+    color: #ff0000;
+    border-color: #ff0000;
+}

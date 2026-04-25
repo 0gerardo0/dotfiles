@@ -1,0 +1,214 @@
+{
+    "output": "eDP-1",
+    "layer": "top",
+    "position": "top",
+    "margin-top": 2,
+    "margin-left": 5,
+    "margin-right": 5,
+    "height": 24,
+    "spacing": 4,
+
+    // ==============================================================================
+    // DISPOSICIÓN DE MÓDULOS (Layout "La Bestia")
+    // ==============================================================================
+    "modules-left": ["custom/power", "hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["clock", "custom/media"],
+    "modules-right": ["network", "group/hardware", "temperature", "backlight", "pulseaudio", "bluetooth", "battery", "idle_inhibitor", "custom/notifications", "tray"],
+
+
+    // --- CONFIGURACIÓN DETALLADA ---
+
+    // 1. INTERFAZ
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            // Monitor Principal (1-5)
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            // Monitor Secundario (6-10) - Opcional, pero bueno para consistencia
+            "6": "", 
+            "7": "", 
+            "8": "", 
+            "9": "", 
+            "10": "",
+            // Iconos adicionales para estado
+            "default": "",
+            "active": "",
+            "empty": "",
+            "urgent": ""
+        }
+    },
+    
+    "hyprland/window": {
+        "max-length": 50,
+        "separate-outputs": true
+    },
+
+    // 2. BOTÓN DE APAGADO
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": false,
+        "on-click": "wlogout -l /home/gerardo0/.config/wlogout/layout -s /home/gerardo0/.config/wlogout/style.css -b 3" 
+    },
+
+    // 3. FECHA Y HORA
+   "clock": {
+        "format": " {:%H:%M   %d/%m}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#7aa2f7'><b>{}</b></span>",
+                "days": "<span color='#c0caf5'><b>{}</b></span>",
+                "weeks": "<span color='#7dcfff'><b>W{}</b></span>",
+                "weekdays": "<span color='#ff9e64'><b>{}</b></span>",
+                "today": "<span color='#f7768e'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "custom/media": {
+        "format": "{icon} {text}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": ""
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null",
+        
+        // --- NUEVAS ACCIONES DE CLIC ---
+        "on-click": "playerctl play-pause",       // Clic Izquierdo: Pausar/Reanudar
+        "on-click-middle": "playerctl next",      // Clic Central (Rueda): Siguiente
+        "on-click-right": "playerctl previous"    // Clic Derecho: Anterior
+    },
+
+    // 5. GRUPO HARDWARE (Desplegable)
+    "group/hardware": {
+        "orientation": "horizontal",
+        "modules": ["cpu", "memory", "disk"],
+        "drawer": {
+            "transition-duration": 500,
+            "children-class": "not-power",
+            "transition-left-to-right": false
+        }
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": true
+    },
+    "memory": {
+        "format": " {}%",
+        "tooltip": true
+    },
+    "disk": {
+        "format": " {percentage_used}%",
+        "path": "/"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": " {temperatureC}°C",
+        "tooltip": false
+    },
+
+    // 6. CONECTIVIDAD Y SISTEMA
+    "network": {
+        "format-wifi": "  {bandwidthDownBytes}",
+        "format-ethernet": " {bandwidthDownBytes}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "⚠ Off",
+        "on-click": "nm-connection-editor"
+    },
+
+    "bluetooth": {
+        "format": " {status}",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+        "on-click": "blueman-manager"
+    },
+
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["", ""]
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pkill pavucontrol || pavucontrol",
+        "on-click-right": "pavucontrol -t 3"
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        // Aquí arreglé el espaciado (doble espacio después del icono)
+        "format": "{icon}  {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        },
+        "tooltip": true
+    },
+
+    "custom/notifications": {
+        "tooltip": false,
+        "format": "{icon}",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+    },
+
+    "tray": {
+        "spacing": 10
+    }
+}
