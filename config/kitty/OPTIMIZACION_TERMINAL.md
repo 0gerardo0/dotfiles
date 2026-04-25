@@ -1,6 +1,7 @@
 # Optimizacion de Rendimiento de Terminal - ZSH
 
 Fecha: 2026-04-24
+Entorno: Hyprland (antes GNOME)
 
 ---
 
@@ -10,6 +11,16 @@ Fecha: 2026-04-24
 |--------------|----------------|
 | Original (todos los plugins) | 200-350ms por comando |
 | Optimizada (sin syntax-highlighting + sin VCS) | 170-190ms por comando |
+
+---
+
+## SISTEMA ACTUAL
+
+- Sistema: Arch Linux
+- Display Manager: Hyprland (antes GNOME)
+- Shell: ZSH con Powerlevel10k
+- Terminal: Kitty
+- Gestor de dotfiles: chezmoi
 
 ---
 
@@ -81,5 +92,6 @@ Para futuro:
 
 - ~/.zshrc
 - ~/.config/kitty/kitty.conf
+- ~/.config/hypr/hyprland.conf
 - ~/.zsh/powerlevel10k/.p10k.zsh
 - ~/.cache/zcompdump
